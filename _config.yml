@@ -1,0 +1,23 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            moird
+tagline:          Look shiney blog
+url:              http://moird.github.io
+paginate:         1
+baseurl:          /
+author:
+  name:           Daniel Myers
+  url:            https://twitter.com/moird
+  email:          dan@moird.com
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           https://github.com/moird/moird.github.io
