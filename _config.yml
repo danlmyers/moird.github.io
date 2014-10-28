@@ -7,7 +7,7 @@ permalink:        pretty
 relative_permalinks: true
 
 # Setup
-title:            moird
+title:            Moird
 tagline:          Look shiny blog
 url:              http://moird.github.io
 paginate:         1
