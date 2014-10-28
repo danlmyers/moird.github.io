@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{% assign NavPages = "/|/about/" | split: "|" %}
+{% assign NavPages = "/,/about/" | split: "," %}
   {% include head.html %}
 
   <body>
@@ -11,9 +11,9 @@
                 {% for node in site.pages %}
                     {% if NavPages contains node.url %}
                         {% if page.url == node.url %}
-                            <a class="blog-nav-item active" href="{{ site.baseurl }}">{{ site.title }}</a>
+                            <a class="blog-nav-item active" href="{{ page.url }}">{{ page.title }}</a>
                         {% else %}
-                            <a class="blog-nav-item" href="{{ site.baseurl }}">{{ site.title }}</a>
+                            <a class="blog-nav-item" href="{{ page.url }}">{{ page.title }}</a>
                         {% endif %}
                     {% endif %}
                 {% endfor %}
