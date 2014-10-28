@@ -4,7 +4,7 @@
     {% if page.url == node.url %}
       <a class="blog-nav-item active" href="{{node.url}}">{{node.title}}</a>
     {% else %}
-      <a class="blog-nav-item active" href="{{node.url}}">{{node.title}}</a>
+      <a class="blog-nav-item" href="{{node.url}}">{{node.title}}</a>
     {% endif %}
   {% endif %}
 {% endfor %}
