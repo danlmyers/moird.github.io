@@ -8,7 +8,7 @@ relative_permalinks: true
 
 # Setup
 title:            moird
-tagline:          Look shiney blog
+tagline:          Look shiny blog
 url:              http://moird.github.io
 paginate:         1
 baseurl:          /
