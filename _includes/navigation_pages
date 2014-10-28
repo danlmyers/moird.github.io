@@ -1,0 +1,11 @@
+{% assign group = 'nav' %}
+{% for node in site.pages %}
+  {% if group == null or group == node.group %}
+    {% if page.url == node.url %}
+      <a class="blog-nav-item active" href="{{node.url}}">{{node.title}}</a>
+    {% else %}
+      <a class="blog-nav-item active" href="{{node.url}}">{{node.title}}</a>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% assign group = nil %}
