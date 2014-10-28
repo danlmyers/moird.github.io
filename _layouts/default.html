@@ -4,6 +4,21 @@
   {% include head.html %}
 
   <body>
+  
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+                <a class="blog-nav-item active" href="{{ site.baseurl }}" title="Home">{{ site.title }}</a>
+                {% for node in site.pages %}
+                    {% if page.url == node.url %}
+                        <li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
+                    {% else %}
+                        <li><a href="{{node.url}}">{{node.title}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </nav>
+        </div>
+    </div>
 
     <div class="container content">
       <header class="masthead">
