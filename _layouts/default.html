@@ -31,8 +31,12 @@
             <div class="sidebar-module">
                 <h4>Archives</h4>
                 <ol class="list-unstyled">
-                    <li><a href="#">Date</a></li>
-                    <li><a href="#">Date</a></li>
+                    {% for post in site.posts %}
+                        {% capture currentyear %}{{post.date | date: "%Y"}}{% endcapture %}
+                        {% if currentyear != year %}
+                            <li><a href="/archive#{{ currentyear }}">{{ currentyear }}</a></li>
+                        {% endif %}
+                    {% endfor %}
                 </ol>
             </div>
         </div>
