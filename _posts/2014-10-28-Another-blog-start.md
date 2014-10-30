@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Another Blog Start
+comments: true
 ---
 So making a new start of a blog.  Maybe I will write more than a post or two every year.  The key thing here is moving to a new platform.  After trying to use wordpress for a long time I have found that I really dislike it.  Wordpress is very bulky php application that for a single person blog or even a two person blog just seemed overkill and difficult to manage.  For running a site with different blogs and lots of writers it probably works fine.
 
