@@ -20,6 +20,11 @@ h6, .h6 {
 }
 
 
+.site-title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
 /*
  * Override Bootstrap's default container.
  */
@@ -29,6 +34,7 @@ h6, .h6 {
     width: 970px;
   }
 }
+
 
 
 /*
@@ -92,7 +98,6 @@ h6, .h6 {
   font-size: 20px;
   color: #999;
 }
-
 
 /*
  * Main column and sidebar layout

@@ -7,10 +7,10 @@
     <div class="blog-masthead">
         <div class="container">
             <nav class="blog-nav">
-                {% if page.url == node.url %}
-                    <a class="blog-nav-item active" href="{{site.baseurl}}">{{site.title}}</a>
+                {% if site.baseurl == page.url %}
+                    <a class="blog-nav-item site-title active" href="{{site.baseurl}}">{{site.title}}</a>
                 {% else %}
-                    <a class="blog-nav-item" href="{{site.baseurl}}">{{site.title}}</a>
+                    <a class="blog-nav-item site-title" href="{{site.baseurl}}">{{site.title}}</a>
                 {% endif %}
                 {% include navigation_pages %}
             </nav>
