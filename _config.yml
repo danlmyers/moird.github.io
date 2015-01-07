@@ -14,10 +14,23 @@ paginate:         1
 baseurl:          /
 author:
   name:           Daniel Myers
-  url:            https://twitter.com/moird
   email:          dan@moird.com
 
 # Custom vars
 version:          1.0.0
 github:           
   repo:           https://github.com/moird/moird.github.io
+
+  # Includes an icon in the side bar or where ever svg links are being used for each username you enter
+svg-links:
+  dribbble:
+  email:
+  facebook:
+  flickr:
+  github: moird
+  instagram:
+  linkedin: moird
+  pinterest:
+  rss: anything # just type anything here for a working RSS icon, make sure you set the "url" above!
+  twitter: moird
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers
