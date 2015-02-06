@@ -9,7 +9,7 @@ relative_permalinks: true
 # Setup
 title:            Daniel Myers
 tagline:          Look shiny blog
-url:              http://moird.github.io
+url:              http://moird.com
 paginate:         1
 baseurl:          /
 author:

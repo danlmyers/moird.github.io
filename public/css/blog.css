@@ -170,3 +170,16 @@ h6, .h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+/*
+ * Social Links
+ */
+ .social li{
+    display:inline;
+}  
+
+.fb-share-button{
+    position:relative;
+    top:-7px;
+}
+ 
