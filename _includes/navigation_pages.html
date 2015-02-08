@@ -2,9 +2,9 @@
 {% for node in site.pages %}
   {% if group == null or group == node.group %}
     {% if page.url == node.url %}
-      <a class="blog-nav-item active" href="{{node.url}}">{{node.title}}</a>
+      <li class="active"><a href="{{node.url}}">{{node.title}}</a></li>
     {% else %}
-      <a class="blog-nav-item" href="{{node.url}}">{{node.title}}</a>
+      <li><a href="{{node.url}}">{{node.title}}</a></li>
     {% endif %}
   {% endif %}
 {% endfor %}

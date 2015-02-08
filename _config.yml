@@ -10,7 +10,7 @@ relative_permalinks: true
 title:            Daniel Myers
 tagline:          Look shiny blog
 url:              http://moird.com
-paginate:         1
+paginate:         4
 baseurl:          /
 author:
   name:           Daniel Myers

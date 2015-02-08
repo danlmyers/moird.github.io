@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
-  {% include google_analytics.html %}
-
   <body>
   
-    <div class="blog-masthead">
-        <div class="container">
-            <nav class="blog-nav">
-                {% if site.baseurl == page.url %}
-                    <a class="blog-nav-item site-title active" href="{{site.baseurl}}">{{site.title}}</a>
-                {% else %}
-                    <a class="blog-nav-item site-title" href="{{site.baseurl}}">{{site.title}}</a>
-                {% endif %}
-                {% include navigation_pages %}
-            </nav>
-        </div>
-    </div>
+    <nav class="top-bar" data-topbar role="navigation">
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="{{site.baseurl}}">{{site.title}}</a></h1>
+			</li>
+		</ul>
+		
+		<section class="top-bar-section">
+			<ul class="left">
+				{% include navigation_pages.html %}
+			</ul>
+			<ul class="right">
+				<li class="has-dropdown">
+					<a href="/archive">Archives</a>
+					<ul class="dropdown">
+						{% for post in site.posts %}
+							{% capture currentyear %}{{post.date | date: "%B %Y"}}{% endcapture %}
+							{% capture linkyear %}{{post.date | date: "%b%Y"}}{% endcapture %}
+							{% if currentyear != year and forloop.index <= 12 %}
+								<li><a href="/archive#{{ linkyear }}">{{ currentyear }}</a></li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</li>
+			</ul>
+		</section>
+    </nav>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 blog-main">
-            {{ content }}
+	<div class="row">
+		<div class="small-12 large-10 columns">
+			{{ content }}
 			{% include comments.html %}
-        </div>
-        
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-            <div class="sidebar-module sidebar-module-inset">
-                {% include svg_icons.html %}
-            </div>
-            <div class="sidebar-module">
-                <h4>Archives</h4>
-                <ol class="list-unstyled">
-                    {% for post in site.posts %}
-                        {% capture currentyear %}{{post.date | date: "%B %Y"}}{% endcapture %}
-                        {% capture linkyear %}{{post.date | date: "%b%Y"}}{% endcapture %}
-                        {% if currentyear != year and forloop.index <= 12 %}
-                            <li><a href="/archive#{{ linkyear }}">{{ currentyear }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ol>
-            </div>
-        </div>
-      </div>
+		</div>
+		<div class="large-2 columns">
+			{% include svg_icons.html %}
+		</div>
+	</div>
 
-      <footer class="footer">
-        <small>
-          &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.
-        </small>
-      </footer>
-    </div>
+	<div class="row">
+		<div class="small-12">
+			<small>
+			  &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.
+			</small>
+		</div>
+	</div>
 
+	{% include google_analytics.html %}
+	{% include scripts.html %}
   </body>
 </html>
