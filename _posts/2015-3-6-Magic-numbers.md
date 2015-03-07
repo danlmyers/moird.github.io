@@ -1,0 +1,10 @@
+---
+layout: post
+title: Magic Numbers
+comments: true
+---
+So recently I needed to determine file types by their magic numbers.  Now I could have done the more sensible thing and just used a python library like [python filemagic](https://filemagic.readthedocs.org/en/latest/) which relies on lib magic.  Which has very well layout and defined output and would be the most preferable way for detecting file types.  With that being said though, learning a little bit about magic numbers and how file types can be detected in python was a good exercise and it fit a very specific need.
+
+The basic idea for detecting magic numbers of a file is to read a specific amount of bytes and look at the file headers or identifiers for specific bits.  For example, a zip file has a header of these bytes: \x50\x4B\x03\x04 so if they appear at the head of the file then it is a type zip.  Pretty basic really at this point.  Where things get complicated is that with zip files especially is that the definition of what makes a zip is fairly loose for one and several other types of files are also technically zip files.  For example Microsoft Word docx format is detected as a zip file can even be extracted as a zip file.  In our particular use that was not really the desired behaviour.  The problem with detecting these files is the detection is not perfect unless decompressing the file and checking the contents of the archive.  That also has a trade off, it may not be desirable or feasible to unpack every archive into memory to determine the actual identity of the file.  So in this regard we kind of cheat and just fall back to relying on the extension name.  This is not a perfect detection of the file but it generally will do a fair job in a pinch.  There are other ways of doing this and making it more exact, there are header pieces that can be checked to determine if the file is an open xml format (both word and open office).  Really though this is probably best handled with python file magic and this was an interesting exercise in identifying file types based on magic numbers.
+
+{% gist 73a0e6aa42d987437d7e %}
