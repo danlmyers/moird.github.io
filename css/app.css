@@ -13,4 +13,13 @@
     position:relative;
     top:-7px;
 }
- 
+
+#img-left {
+    float: left;
+    margin: 0 0 10px 10px;
+}
+
+#img-right {
+    float: right;
+    margin: 0 0 10px 10px;
+}
